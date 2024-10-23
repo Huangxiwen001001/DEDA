@@ -1,109 +1,96 @@
-*========================*
-DEDA-Fudan-Group2：Final Project
-*========================*
+======================== DEDA-Fudan-Group2: Final Project ========================
 
-成员（按分工顺序排序）：王肃坤、黄熙雯、陈泽昊、李思源、王贺
+Members (listed by division of labor): Wang Sukun, Huang Xiwen, Chen Zehao, Li Siyuan, Wang He
 
-*==============================================
-项目使用的数据均来源于：Xiaojian Niu, Jiahao Gong, Sukun Wang, Haofan Qiang. Research on the Cascading Interdependent Mechanism of Upside and Downside Financial Risks across Stock and Bond Markets: Cascading Interdependent Multiplex Networks Approach from an Industry Perspective, 2024, Working Paper.
+*==========================================================================
+The data used in the project are all sourced from: Xiaojian Niu, Jiahao Gong, Sukun Wang, Haofan Qiang. Research on the Cascading Interdependent Mechanism of Upside and Downside Financial Risks across Stock and Bond Markets: Cascading Interdependent Multiplex Networks Approach from an Industry Perspective, 2024, Working Paper.
 
-项目分为三个部分，具体说明如下：
+The project is divided into three parts, described as follows:
 
 *--------------------------------------------------------------------------
 
-1 聚类 Clustering（路径：FinalProject/1_Clustering）
-
-1.1 数据说明
-
-个体：29个行业（申万一级行业分类）；
-
-时间及频率：2009-01-09至2010-01-09（国际金融危机中后期）；周度数据
-
-聚类指标：行业 j 的风险联动总强度Risk_j。由行业间债券风险联动网络邻接矩阵内，行业 j 的风险传染强度（第 j 行）和风险承受强度（第 j 列）加总得到。其中，行业间债券风险联动网络邻接矩阵由“基于去一法和数据锐化的非线性格兰杰因果检验”对债券已实现波动率RV计算得到。
+1 Clustering (Path: FinalProject/1_Clustering)
 
 
-1.2 聚类方法
+1.1 Data Description
 
-1.2.1 谱聚类 Spectral Clustering；
-三种展示方式：谱聚类图（graph_spectral_clustering.jpg）；t-SNE图（graph_tsne.jpg）；UMAP图（graph_umap.jpg）
+Entities: 29 industries (classified by Shenwan first-level industry categories);
 
-1.2.2 层次聚类 Hierarchical clustering
-一种展示方式：Iris聚类树（graph_iris_clustering.jpg）
+Time and Frequency: January 9, 2009, to January 9, 2010 (late stage of the global financial crisis); weekly data.
+
+Clustering metric: The total intensity of risk linkage for industry j, Risk_j. This is obtained by summing the risk contagion intensity (row j) and risk bearing intensity (column j) in the bond risk linkage network adjacency matrix. The adjacency matrix of the bond risk linkage network is calculated using the "Nonlinear Granger Causality Test Based on Leave-One-Out and Data Sharpening" on bond realized volatility (RV).
 
 
-1.3 聚类结果解释
+1.2 Clustering Methods
 
-每一类别 所含行业数字标签 对应的具体名称，见“result_clustering.txt”中的Spectral Clustering Results和Hierarchical Clustering Results
+1.2.1 Spectral Clustering; Three display methods: Spectral clustering graph (graph_spectral_clustering.jpg); t-SNE graph (graph_tsne.jpg); UMAP graph (graph_umap.jpg)
 
-同一类别的行业具有更相似的风险联动特征，其背后有一定的经济意义（比如行业性质类似、受国际金融危机的影响相似，等等）
+1.2.2 Hierarchical Clustering One display method: Iris clustering tree (graph_iris_clustering.jpg)
 
+
+1.3 Interpretation of Clustering Results
+
+The specific industry name corresponding to each category's numerical label can be found in "result_clustering.txt" under Spectral Clustering Results and Hierarchical Clustering Results.
+
+Industries in the same category exhibit more similar risk linkage characteristics, which may have economic significance (such as industries with similar characteristics, similar impacts from the global financial crisis, etc.).
 
 *----------------------------------------------------------------------------
 
-2 最小生成树 Minimum Spanning Tree（路径：FinalProject/2_MST）
-
-2.1 数据说明
-
-MST对图（由节点、链接构成）进行分析
-
-图的节点：58个节点，分别是29个行业的股票节点，以及29个行业的债券节点
-
-图的链接：行业不同资产之间的风险联动强度
-
-该部分分析了以下四个阶段的风险联动网络：
-股票牛市（stock bull，2014年7月—2015年6月）
-股票熊市（stock bear，2015年6月—2016年1月）
-债券牛市（bond bull，2013年11月—2016年10月）
-债券熊市（bond bear，2016年10月—2017年11月）
+2 Minimum Spanning Tree (Path: FinalProject/2_MST)
 
 
-2.2 最小生成树结果
+2.1 Data Description
 
-图像结果：见“MST_vol_bad_stock_bull_非线性网络.jpg”等四张图
+MST analyzes graphs composed of nodes and links.
 
-行业名称：图像中节点编号对应的行业名称（中文），见“industry_mapping_rule.txt”；行业名称（英文），见“label_vol_bad_bond_bear_非线性网络.txt”
+Graph nodes: 58 nodes, representing 29 stock nodes and 29 bond nodes from different industries.
 
-结果解释：最小生成树保留了风险联动网络中最主干的部分。如果某些行业在这四个阶段都存在，说明这些行业对于风险联动具有重要的作用；尤其是占据中心位置的行业，更说明其关键地位
+Graph links: The risk linkage intensity between different asset types within industries.
 
+This section analyzes the risk linkage networks of the following four phases: Stock bull market (July 2014 - June 2015) Stock bear market (June 2015 - January 2016) Bond bull market (November 2013 - October 2016) Bond bear market (October 2016 - November 2017)
+
+
+2.2 Minimum Spanning Tree Results
+
+Image results: See “MST_vol_bad_stock_bull_nonlinear_network.jpg” and three other images.
+
+Industry names: The industry names corresponding to node numbers in the images (in Chinese) can be found in “industry_mapping_rule.txt”; the industry names (in English) can be found in “label_vol_bad_bond_bear_nonlinear_network.txt”.
+
+Result Interpretation: The minimum spanning tree retains the most critical part of the risk linkage network. If certain industries appear in all four phases, it indicates that these industries play an important role in risk linkage. Especially the industries occupying central positions, which highlights their critical status.
 
 *-------------------------------------------------------------------------------
 
-3 机器学习预测 Machine Learning（路径：FinalProject/3_ML）
-
-3.1 数据说明
-
-数据结构：股票市场下行风险联动网络，以邻接矩阵表示，由29个行业股票资产节点及其链接构成
-
-时间及频率：2008-06-05至2022-12-30，共710个网络邻接矩阵；采用滚窗计算，窗口为250天，步长为一周（5个交易日）
-
-预测思路：将以下时段设定为金融危机发生时期，期内的网络特征标注为1，期外标注为0，训练模型以预测未来的金融危机发生时期，评价模型性能：
- (datetime(2007, 7, 26), datetime(2009, 12, 31)),  # Global financial crisis
- (datetime(2013, 6, 7), datetime(2013, 12, 31)),  # Bank liquidity crisis
- (datetime(2015, 6, 15), datetime(2016, 12, 20))  # Stock market crash
+3 Machine Learning Prediction (Path: FinalProject/3_ML)
 
 
-3.2 训练设定
+3.1 Data Description
 
-3.2.1 图神经网络 GNN 参数设置
+Data structure: The downside risk linkage network in the stock market is represented by an adjacency matrix, composed of 29 industry stock asset nodes and their links.
 
-隐藏层数量 hidden_channels=65；分类种类 num_classes=2；节点特征 num_node_features=1；链接特征 num_edge_features=1；训练次数 epoch = 350
+Time and Frequency: June 5, 2008, to December 30, 2022, a total of 710 network adjacency matrices. Rolling window calculation is used, with a window of 250 days and a step size of one week (5 trading days).
 
-3.2.2 模型性能评价指标
-预测准确率 Accuracy（越高越好） F1-score（越高越好） F-Alarm（越低越好）
+Prediction approach: The following periods are designated as financial crisis periods, with the network characteristics during these periods labeled as 1, and those outside as 0. The model is trained to predict future financial crisis periods and evaluate its performance: (datetime(2007, 7, 26), datetime(2009, 12, 31)), # Global financial crisis (datetime(2013, 6, 7), datetime(2013, 12, 31)), # Bank liquidity crisis (datetime(2015, 6, 15), datetime(2016, 12, 20)) # Stock market crash
 
 
-3.3 训练过程与结果
+3.2 Training Settings
 
-训练过程准确率时序图：见“graph_accuracy_curve.jpg”
+3.2.1 GNN Parameters
 
-训练集预警信号图：见“graph_prediction_results.jpg”
+Hidden layers: hidden_channels=65; Classification types: num_classes=2; Node features: num_node_features=1; Link features: num_edge_features=1; Training iterations: epoch = 350.
 
-Accuracy、F1-score、F-Alarm逐次训练结果：见“accuraciesGGNN.csv”
+3.2.2 Model Performance Metrics Prediction accuracy (higher is better), F1-score (higher is better), and F-Alarm (lower is better).
+
+
+3.3 Training Process and Results
+
+Training process accuracy time series graph: See “graph_accuracy_curve.jpg”.
+
+Warning signal graph for the training set: See “graph_prediction_results.jpg”.
+
+Sequential training results of Accuracy, F1-score, and F-Alarm: See “accuraciesGGNN.csv”.
 
 *==================================================
 
-以上是Final Project所有实证工作的说明。
+The above is the description of all empirical work for the Final Project of Group2.
 
-
-作者：（小组成员）王肃坤 黄熙雯
-
+Authors: (Group Members) Wang Sukun, Huang Xiwen
