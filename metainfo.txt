@@ -1,6 +1,16 @@
 ======================== DEDA-Fudan-Group2: Final Project ========================
 
-Members (listed by division of labor): Wang Sukun, Huang Xiwen, Chen Zehao, Li Siyuan, Wang He
+Name of QuantLet : DEDA_Final_Project_DEDA_Fudan_Group2
+
+Published in : DEDA class
+
+Description : 'Financial Risks across Stock and Bond Markets — Analyses with Machine Learning Methods'
+
+Keywords : cluster analysis, minumum spanning tree, machine learning, graph neural networks
+
+Author: Wang Sukun, Huang Xiwen, Chen Zehao, Li Siyuan, Wang He
+
+Submitted : Sat, October 23 2024 by Huang Xiwen
 
 *==========================================================================
 The data used in the project are all sourced from: Xiaojian Niu, Jiahao Gong, Sukun Wang, Haofan Qiang. Research on the Cascading Interdependent Mechanism of Upside and Downside Financial Risks across Stock and Bond Markets: Cascading Interdependent Multiplex Networks Approach from an Industry Perspective, 2024, Working Paper.
