@@ -8,7 +8,7 @@ Description : 'Financial Risks across Stock and Bond Markets — Analyses with M
 
 Keywords : cluster analysis, minumum spanning tree, machine learning, graph neural networks
 
-Author: Wang Sukun, Huang Xiwen, Chen Zehao, Li Siyuan, Wang He
+Authors: Wang Sukun, Huang Xiwen, Chen Zehao, Li Siyuan, Wang He
 
 Submitted : Sat, October 23 2024 by Huang Xiwen
 
@@ -102,5 +102,3 @@ Sequential training results of Accuracy, F1-score, and F-Alarm: See “accuracie
 *==================================================
 
 The above is the description of all empirical work for the Final Project of Group2.
-
-Authors: (Group Members) Wang Sukun, Huang Xiwen
