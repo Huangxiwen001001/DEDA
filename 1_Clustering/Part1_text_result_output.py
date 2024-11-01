@@ -19,7 +19,7 @@ rcParams.update(config)
 plt.rcParams['axes.unicode_minus'] = False
 
 # Load the dataset
-file_path = r"D:\1_FDU\3_Learn_Python\DigitalEconomyDecisionAnalytics-master\FinalProject\1_Clustering\data_risk_Industry.csv"
+file_path = r"YOUR_OWN_PATH\1_Clustering\data_risk_Industry.csv"
 data = pd.read_csv(file_path)
 
 # Filter data between 2009-01-09 and 2010-01-09 and use the 'Industry_Label' column
