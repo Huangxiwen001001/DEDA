@@ -5,7 +5,7 @@ from scipy.sparse.csgraph import minimum_spanning_tree
 import matplotlib.pyplot as plt
 
 # 设置文件路径
-file_directory = r'D:\1_FDU\3_Learn_Python\DigitalEconomyDecisionAnalytics-master\FinalProject\2_MST'
+file_directory = r'YOUR_OWN_PATH\FinalProject\2_MST'
 
 # 英文翻译的行业名，用于图例
 english_labels = {
@@ -43,7 +43,7 @@ for file_name in os.listdir(file_directory):
         mst_matrix = minimum_spanning_tree(data).toarray()
 
         # 创建图结构
-        graph = nx.from_numpy_matrix(mst_matrix)
+        graph = nx.from_numpy_array(mst_matrix)
 
         # 设置节点标签为节点编号
         node_labels = {i: str(i) for i in range(data.shape[0])}
