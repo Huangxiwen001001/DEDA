@@ -5,7 +5,7 @@ from scipy.sparse.csgraph import minimum_spanning_tree
 import matplotlib.pyplot as plt
 
 # 设置文件路径
-file_directory = r'YOUR_OWN_PATH\FinalProject\2_MST'
+file_directory = r'YOUR_OWN_PATH\2_MST'
 
 # 英文翻译的行业名，用于图例
 english_labels = {
