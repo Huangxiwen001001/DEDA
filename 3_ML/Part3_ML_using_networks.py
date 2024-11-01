@@ -55,7 +55,7 @@ def extract_date_from_filename(filename):
         return date_str.group(1)
     return None
 
-folder_path = r"D:\1_FDU\3_Learn_Python\DigitalEconomyDecisionAnalytics-master\FinalProject\3_ML\data_networks_csv"
+folder_path = r"YOUR_OWN_PATH\3_ML\data_networks_csv"
 
 # List all files in the directory
 all_files = os.listdir(folder_path)
@@ -324,7 +324,7 @@ tick_positions = np.linspace(2, num_ticks-1, len(years))  # Generate positions e
 plt.xticks(tick_positions, years, rotation=0, ha="right")  # Set x-tick positions and labels
 plt.title('Prediction Results (Test Set)')
 # Save heatmap to local file
-plt.savefig(r'D:\1_FDU\3_Learn_Python\DigitalEconomyDecisionAnalytics-master\FinalProject\3_ML\graph_prediction_results.jpg', dpi=300, bbox_inches='tight')
+plt.savefig(r'YOUR_OWN_PATH\3_ML\graph_prediction_results.jpg', dpi=300, bbox_inches='tight')
 
 plt.show()
 
@@ -344,6 +344,6 @@ plt.legend()
 plt.grid(True)
 
 # Save the accuracy curve to a jpg file
-plt.savefig(r'D:\1_FDU\3_Learn_Python\DigitalEconomyDecisionAnalytics-master\FinalProject\3_ML\graph_accuracy_curve.jpg', dpi=300, bbox_inches='tight')
+plt.savefig(r'YOUR_OWN_PATH\3_ML\graph_accuracy_curve.jpg', dpi=300, bbox_inches='tight')
 
 plt.show()
